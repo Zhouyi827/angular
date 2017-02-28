@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="angular.min.js"></script>
+<script>
+// var str = 'hello';
+// var id = angular.identity(str);
+// var noop = angular.noop(str);
+// console.log(id);
+// console.log(noop);
+// var div = document.getElementById("div");
+// angular.element(div).css("background","red");
+var m1 = angular.module('myApp1', []);
+var m2 = angular.module('myApp2', []);
+m1.controller('Aaa', ['$scope', function($scope){
+	$scope.name = "m1_name";
+}]);
+m2.controller('Bbb', ['$scope', function($scope){
+	$scope.name = "m2_name";
+}]);
+document.onclick = function(){
+	var ad = document.getElementsByTagName("div");
+	angular.bootstrap(ad[0],["myApp1"]);
+	angular.bootstrap(ad[1],["myApp2"]);
+};
+</script>
+</head>
+<body>
+<div ng-controller="Aaa">
+	<p>{{name}}</p>
+</div>
+<div ng-controller="Bbb">
+	<p>{{name}}</p>
+</div>
+<script>
+
+</script>
+</body>
+</html>

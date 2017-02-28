@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="angular.min.js"></script>
+<script>
+var mk = angular.module('myApp',[]);
+mk.controller('Aaa', ['$scope', function($scope){
+	$scope.name = "hello";
+}]);
+mk.controller('Bbb', ['$scope', function($scope){
+	$scope.name = "hi";
+}]);
+document.onclick = function(){
+	var divs = document.getElementsByTagName("div");
+	angular.bootstrap(divs[0], ["myApp"]);
+	angular.bootstrap(divs[1], ["myApp"]);
+};
+
+</script>
+</head>
+<body>
+<div ng-controller="Aaa">
+	<p>{{name}}</p>
+</div>
+<div ng-controller="Bbb">
+	<p>{{name}}</p>
+</div>
+</body>
+</html>

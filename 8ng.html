@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp"><!-- ng-app="myApp" -->
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="angular.min.js"></script>
+<script>
+
+/*var mk = angular.module('myApp', []);
+mk.controller('Aaa', ['$scope',"$timeout", function($scope,$timeout){
+	$scope.name = "hello";
+	$timeout(function(){
+		$scope.name = "hi";
+	},2000);
+}]);*/
+/*function Aaa($scope,$timeout){
+	$scope.name = "hi";
+	setTimeout(function(){
+		$scope.$apply(function(){
+			$scope.name = "hello";
+		});
+	},1000);
+};*/
+var mk = angular.module('myApp', []);
+mk.run(['$rootScope', function($rootScope){
+	$rootScope.name = "hello,hi,hahaha~";
+}]);
+</script>
+</head>
+<body>
+<div>
+	<p>{{name}}</p>
+</div>
+</body>
+</html>

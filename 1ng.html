@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="./../angular.min.js"></script>
+<script>
+function Fct($scope,$interval) { 
+	$scope.name = "hello";
+	$scope.off = true;
+	/*$interval(()=>{
+		$scope.off = !$scope.off;
+		if($scope.off){
+			$scope.name = "hello,当off为false时显示我";
+		}else{
+			$scope.name = "hi,当off显示为true的时候显示我";
+		}
+	},600);*/
+	$scope.fn = (a)=>{
+		alert(a)
+	}
+}
+</script>
+</head>
+<body>
+<div ng-controller="Fct">
+	<input type="text" ng-model="name">
+	<p ng-click="fn(name)">{{name}}</p>
+</div>
+</body>
+</html>

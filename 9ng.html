@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="angular.min.js"></script>
+<script>
+
+var mk = angular.module("myApp",[]);
+mk.controller('Aaa', ['$scope', function($scope){
+	// $scope.n = "123456789";
+	$scope.obj = {"name":"leo","age":"20"};
+
+}]);
+</script>
+</head>
+<body>
+<div ng-controller="Aaa">
+	<!-- <p>{{n|number}}</p>
+	<p>{{n|currency}}</p> -->
+	<!-- <pre>{{obj|json}}</pre> -->
+	<p>{{n}}</p>
+</div>
+</body>
+</html>

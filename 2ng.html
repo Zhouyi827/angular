@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="angular.min.js"></script>
+<script>
+function fct($scope){
+	$scope.sj = {
+		jg:10,
+		sl:1,
+		yf:8
+	};
+	$scope.xj = function(){
+		return $scope.sj.jg * $scope.sj.sl;
+	};
+	$scope.$watch($scope.xj, function(newValue, oldValue) {
+		$scope.sj.yf = newValue>=100?0:8;		
+	});
+}
+</script>
+</head>
+<body>
+<div ng-controller="fct">
+	<p>价格: <input type="text" ng-model="sj.jg"></p>
+	<p>数量: <input type="text" ng-model="sj.sl"></p>
+	<p>小计: <span>{{ xj() | currency }}</span></p>
+	<p>运费: <span>{{ sj.yf | currency }}</span></p>
+	<p>总计: <span>{{ xj() + sj.yf | currency }}</span></p>
+</div>
+</body>
+</html>

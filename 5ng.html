@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="angular.min.js"></script>
+<script>
+var arr = [];
+//console.log(angular.isArray(arr))
+var fn = function(){};
+//console.log(angular.isFunction(fn))
+var num = 0;
+// console.log(angular.isNumber(num));
+var time = new Date();
+// console.log(angular.isDate(time));
+// console.log(angular.version);
+var a = NaN;
+var b = NaN;
+// console.log(angular.equals(a, b));
+var values = ["a","b","c"];
+var objs = {"name":"hello","age":20};
+var val = [];
+angular.forEach(values, function(value, key){
+	//console.log(value);
+	//console.log(key);
+val.push(value);
+});
+console.log(val.reverse());
+var json = '{"name":"hello","age":20}';
+//console.log(angular.stringify())
+var j = angular.fromJson(json);
+console.log(j)
+console.log(angular.toJson(j));
+</script>
+</head>
+<body>
+</body>
+</html>
